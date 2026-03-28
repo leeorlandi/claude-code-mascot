@@ -14,9 +14,9 @@ No framework. No build step. One tag.
 
 | | state | what's happening |
 |---|---|---|
-| ![open](assets/mascot-open.png) | **default** | floating. eyes open. arm waves every ~3 blinks. |
-| ![squint](assets/mascot-squint.png) | **blink** | squints `> <` for a beat. happens on a 4s cycle. |
-| ![wave](assets/mascot-wave.png) | **wave** | right arm lifts and settles. fires once, then idles. |
+| <img src="assets/mascot-open.svg" width="80"> | **default** | floating. eyes open. arm waves every ~3 blinks. |
+| <img src="assets/mascot-squint.svg" width="80"> | **blink** | squints `> <` for a beat. happens on a 4s cycle. |
+| <img src="assets/mascot-wave.svg" width="80"> | **wave** | right arm lifts and settles. fires once, then idles. |
 
 ---
 
