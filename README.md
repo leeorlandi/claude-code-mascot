@@ -1,5 +1,9 @@
 # claude-code-mascot
 
+<p align="center">
+  <img src="assets/mascot-animated.svg" width="120" alt="claude-code mascot — floating, blinking, waving">
+</p>
+
 A pixel-art Web Component. Drop it in. It floats, blinks, and waves.
 No framework. No build step. One tag.
 

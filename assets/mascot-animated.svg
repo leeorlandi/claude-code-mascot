@@ -1,0 +1,59 @@
+<svg viewBox="-5 -12 120 100" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
+  <style>
+    .mascot { animation: float 3.2s ease-in-out infinite; }
+    .arm    { transform-origin: 100px 32.625px; animation: wave 12s ease-in-out infinite; }
+    .eyes-open   { animation: eyes-open   4s step-end infinite; }
+    .eyes-squint { animation: eyes-squint 4s step-end infinite; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px);   }
+      50%      { transform: translateY(-10px);  }
+    }
+    @keyframes wave {
+      0%     { transform: rotate(0deg);   }
+      3.3%   { transform: rotate(-22deg); }
+      6.7%   { transform: rotate(8deg);   }
+      10%    { transform: rotate(-18deg); }
+      13.3%  { transform: rotate(6deg);   }
+      16.7%  { transform: rotate(0deg);   }
+      100%   { transform: rotate(0deg);   }
+    }
+    @keyframes eyes-open {
+      0%, 88%    { opacity: 1; }
+      89%, 100%  { opacity: 0; }
+    }
+    @keyframes eyes-squint {
+      0%, 88%   { opacity: 0; }
+      89%, 95%  { opacity: 1; }
+      96%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <g class="mascot">
+    <!-- body -->
+    <rect x="10" y="0"     width="90" height="65.25" fill="#c8614e"/>
+    <!-- left arm -->
+    <rect x="0"  y="21.75" width="10" height="21.75" fill="#c8614e"/>
+    <!-- right arm (waves) -->
+    <g class="arm">
+      <rect x="100" y="21.75" width="10" height="21.75" fill="#c8614e"/>
+    </g>
+    <!-- shoulder cover -->
+    <rect x="98" y="21.75" width="8"  height="21.75" fill="#c8614e"/>
+    <!-- legs -->
+    <rect x="10" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+    <rect x="30" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+    <rect x="70" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+    <rect x="90" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+    <!-- open eyes -->
+    <g class="eyes-open">
+      <rect x="20" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+      <rect x="80" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+    </g>
+    <!-- squint eyes -->
+    <g class="eyes-squint">
+      <polyline points="21,22.5 28.5,27.19 21,31.9" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="miter" stroke-linecap="butt"/>
+      <polyline points="89,22.5 81.5,27.19 89,31.9" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="miter" stroke-linecap="butt"/>
+    </g>
+  </g>
+</svg>
