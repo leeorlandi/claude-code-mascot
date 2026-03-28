@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>claude-mascot demo</title>
+  <script src="../dist/claude-mascot.js"></script>
+  <style>
+    body {
+      font-family: monospace;
+      background: #f5f5f5;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    section {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    h2 { margin: 0 0 0.5rem; font-size: 0.85rem; color: #555; }
+    label { font-size: 0.8rem; color: #333; }
+    input[type=color] { cursor: pointer; width: 40px; height: 30px; border: none; background: none; }
+    input[type=range] { width: 120px; }
+  </style>
+</head>
+<body>
+
+  <h1 style="margin:0;font-size:1.1rem">claude-mascot demo</h1>
+
+  <section>
+    <div>
+      <h2>default</h2>
+      <claude-mascot id="main" size="120"></claude-mascot>
+    </div>
+
+    <div>
+      <h2>color picker</h2>
+      <label>
+        color <input type="color" id="colorPicker" value="#c8614e">
+      </label>
+      <br><br>
+      <label>
+        size <input type="range" id="sizeSlider" min="40" max="240" value="120">
+      </label>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0.5rem">
+      <h2>toggles</h2>
+      <label><input type="checkbox" id="noFloat"> no-float</label>
+      <label><input type="checkbox" id="noBlink"> no-blink</label>
+      <label><input type="checkbox" id="noWave">  no-wave</label>
+      <label><input type="checkbox" id="noAnimate"> no-animate</label>
+    </div>
+  </section>
+
+  <section>
+    <div><h2>coral</h2><claude-mascot color="#c8614e" size="90"></claude-mascot></div>
+    <div><h2>sky</h2><claude-mascot color="#4e9ec8" size="90"></claude-mascot></div>
+    <div><h2>mint</h2><claude-mascot color="#4ec87a" size="90"></claude-mascot></div>
+    <div><h2>lavender</h2><claude-mascot color="#9e4ec8" size="90"></claude-mascot></div>
+    <div><h2>no-animate</h2><claude-mascot color="#c8614e" size="90" no-animate></claude-mascot></div>
+    <div><h2>no-float</h2><claude-mascot color="#c8614e" size="90" no-float></claude-mascot></div>
+    <div><h2>no-blink</h2><claude-mascot color="#c8614e" size="90" no-blink></claude-mascot></div>
+  </section>
+
+  <script>
+    const main = document.getElementById('main');
+
+    document.getElementById('colorPicker').addEventListener('input', e => {
+      main.setAttribute('color', e.target.value);
+    });
+
+    document.getElementById('sizeSlider').addEventListener('input', e => {
+      main.setAttribute('size', e.target.value);
+    });
+
+    ['noFloat', 'noBlink', 'noWave', 'noAnimate'].forEach(id => {
+      document.getElementById(id).addEventListener('change', e => {
+        const attr = id.replace(/([A-Z])/g, '-$1').toLowerCase().slice(0);
+        if (e.target.checked) main.setAttribute(attr, '');
+        else main.removeAttribute(attr);
+      });
+    });
+  </script>
+
+</body>
+</html>
