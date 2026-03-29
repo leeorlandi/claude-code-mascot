@@ -144,6 +144,10 @@ Then: add the export, add an attribute to `observedAttributes` in `mascot.js`, a
 
 ## run the demo
 
+**Live:** https://leeorlandi.github.io/claude-code-mascot/demo/
+
+Or locally:
+
 ```
 open demo/index.html
 ```
